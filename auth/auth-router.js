@@ -42,13 +42,13 @@ router.get('/logout', (req, res) => {
     if(req.session) {
         req.session.destroy(err => {
             if(err) {
-                res.status(500).json({ message: 'you can checkout at any time you like, but you may never leave...'})
+                res.status(500).json({ message: 'Error logging out'})
             } else {
                 res.status(200).json({ message: 'logout SUCCESS!'})
             }
         });
     } else {
-        res.status(200).json({ message: 'Bye Felicia! '})
+        res.status(200).json({ message: 'You are already logged out! '})
     }
 })
 
